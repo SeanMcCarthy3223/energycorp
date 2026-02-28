@@ -1,2 +1,3 @@
 Backend/django-back/db.sqlite3
 Backend/.vscode
+.claude/settings.local.json

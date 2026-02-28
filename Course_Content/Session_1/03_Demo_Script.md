@@ -191,9 +191,9 @@ Add a property to this Client model that returns the client's full display name 
 
 > **Say:** "See the diff? Green lines are additions. I can accept or reject each change. This is the core workflow in the IDE — Claude proposes, you review."
 
-**7.** **Reject the change** (we don't want to modify the demo repo permanently).
+**7.** **Accept the change** (we will revert after to not modify the demo repo permanently).
 
-> **Say:** "I'm rejecting this because it's just a demo. In practice, you'd review the diff, make sure it's correct, then accept."
+> **Say:** "If you decide after accepting that you want to reject the change, you can use the "rewind" function in Claude Code CLI by hitting 'Esc' twice. From there you just select the change you want to revert to and hit 'Enter'"
 
 ---
 

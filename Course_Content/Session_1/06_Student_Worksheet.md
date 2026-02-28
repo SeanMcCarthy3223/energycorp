@@ -1,4 +1,4 @@
-# Student Worksheet: Getting Started with Claude Code
+# Hands-on Lab: Getting Started with Claude Code
 
 **Duration:** 25-35 minutes (independent work)
 **Goal:** Set up Claude Code for your project, create a CLAUDE.md, implement a small change, and submit a PR with a review checklist.
@@ -212,12 +212,6 @@ Pick ONE of the following (or propose your own — something small and self-cont
 - Create a small reusable component (e.g., a status badge, formatted date display)
 - Add a loading state to a component that doesn't have one
 
-**Write down your chosen change here:**
-
-> I will: _______________________________________________________________
->
-> Files likely affected: _________________________________________________
-
 ### 4.2 Plan First
 
 Enter Plan Mode: press `Shift+Tab` twice (or type `/plan`).
@@ -344,19 +338,11 @@ If Claude didn't generate one, add this checklist to your PR description (adapt 
 - [ ] Review the full diff, not just Claude's summary
 ```
 
-### 6.3 Record Your PR
-
-**PR URL:** ____________________________________________________________
-
-**Branch name:** ________________________________________________________
-
-**What was changed:** ___________________________________________________
-
 ---
 
 ## Self-Assessment
 
-Answer these questions honestly. They're for your own learning — not graded.
+Answer these questions honestly. They're for your own knowledge and retention.
 
 ### Understanding
 
