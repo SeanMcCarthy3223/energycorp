@@ -10,20 +10,22 @@ This project requires **Node 12** (tested with v12.22.12). It will NOT work with
 ### Using nvm
 
 ```bash
-nvm use 12          # Switch to Node 12
+nvm use 12          # Switch to Node 12 (interactive shells only)
 # or install it first:
 nvm install 12
 ```
 
 When running any npm command (install, start, build, test), always ensure Node 12 is active first.
 
-In non-interactive shells (scripts, CI, background tasks), nvm must be sourced explicitly via a login shell:
+### Non-interactive shells (Claude Code, scripts, CI)
+
+`nvm use` and `nvm.sh` are unreliable in non-interactive shells — `nvm.sh` exits with code 3 and `bash -l` does not reliably fix it. **The most reliable approach is to prepend the Node 12 binary directory to PATH directly:**
 
 ```bash
-bash -l -c 'export NVM_DIR="$HOME/.nvm"; source "$NVM_DIR/nvm.sh"; nvm use 12 && npm start'
+PATH="$HOME/.nvm/versions/node/v12.22.12/bin:$PATH" npm test -- --watchAll=false --coverage
 ```
 
-`nvm.sh` exits with code 3 in non-login shells even when it works — use `bash -l` to avoid this.
+This works for any npm command (install, start, build, test). Always use this pattern instead of `nvm use` when running from non-interactive shells.
 
 ## Installing Dependencies
 
@@ -51,7 +53,7 @@ npm start          # Starts on http://localhost:3000
 The backend Django API must also be running (default: http://localhost:8000) for the app to function. Start it from `Backend/src/`:
 
 ```bash
-python manage.py runserver 8000
+python3 manage.py runserver 8000
 ```
 
 ## Known Warnings (Safe to Ignore)

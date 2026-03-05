@@ -12,22 +12,25 @@ Energy Corporation Management System — a full-stack app for managing energy di
 
 ```bash
 # From Backend/ directory
-pip install -r requirements.txt          # Install dependencies (or: pipenv install)
-python src/manage.py runserver            # Start dev server
-python src/manage.py test                 # Run all tests
-python src/manage.py test users           # Run tests for a single app
-python src/manage.py makemigrations       # Create migrations
-python src/manage.py migrate              # Apply migrations
-python src/manage.py createsuperuser      # Create admin user
+# Note: use python3 (not python) — python is not available on this system
+python3 -m pip install -r requirements.txt   # Install dependencies (or: pipenv install)
+python3 src/manage.py runserver              # Start dev server
+python3 src/manage.py test                   # Run all tests
+python3 src/manage.py test users             # Run tests for a single app
+python3 src/manage.py makemigrations         # Create migrations
+python3 src/manage.py migrate                # Apply migrations
+python3 src/manage.py createsuperuser        # Create admin user
 
 # Coverage (requires: pip install coverage)
-cd src && coverage run --source='.' manage.py test && coverage report
+cd src && python3 -m coverage run --source='.' manage.py test && python3 -m coverage report
 ```
 
 ### Frontend (React)
 
 ```bash
 # From Frontend/ directory (requires Node 12 — see Frontend/CLAUDE.md)
+# In non-interactive shells, prefix commands with:
+#   PATH="$HOME/.nvm/versions/node/v12.22.12/bin:$PATH"
 npm install        # Install dependencies
 npm start          # Start dev server
 npm run build      # Production build
