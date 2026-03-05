@@ -1,6 +1,32 @@
-Backend/django-back/db.sqlite3
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Database
+*.sqlite3
+
+# Environment
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
 Backend/.vscode
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Claude Code
 .claude/settings.local.json
 .claude/worktrees/
-__pycache__/
-*.pyc
