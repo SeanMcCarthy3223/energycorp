@@ -86,7 +86,7 @@ class CreateUser extends React.Component {
 
         // console.log(data)
 
-        Axios.post('https://energycorp.herokuapp.com/api/user/worker/create/bulk/', data)
+        Axios.post('/api/user/worker/create/bulk/', data)
             .then(res => {
                 let given = res.data;
                 if (given.code === 200) {

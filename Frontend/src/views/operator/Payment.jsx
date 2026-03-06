@@ -43,7 +43,7 @@ class Payment extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         if (this.state.contract !== "") {
-            axios.post("https://energycorp.herokuapp.com/api/invoice/by-contract/", { contractNumber: parseInt(this.state.contract) })
+            axios.post("/api/invoice/by-contract/", { contractNumber: parseInt(this.state.contract) })
                 .then(res => {
                     var { error, find } = res.data;
                     if (error === true || find === false) {
@@ -98,7 +98,7 @@ class Payment extends React.Component {
         }        
        
         console.log(msg);
-        axios.post("https://energycorp.herokuapp.com/api/pay/" + route, msg)
+        axios.post("/api/pay/" + route, msg)
             .then(res => {
                 alert(counterpart.translate('createClient.exito'));
             })
@@ -119,7 +119,7 @@ class Payment extends React.Component {
             workerPayment: worker
         }
             
-        axios.post("https://energycorp.herokuapp.com/api/pay/directpayment/reactivate/", msg)
+        axios.post("/api/pay/directpayment/reactivate/", msg)
             .then(res => {
                 alert(counterpart.translate('createClient.exito'));
             })
@@ -129,7 +129,7 @@ class Payment extends React.Component {
     }
 
     async componentDidMount() {
-        const res = await fetch('https://energycorp.herokuapp.com/api/bancks');
+        const res = await fetch('/api/bancks');
 
         const data = await res.json();
         this.setState({ banks: data });

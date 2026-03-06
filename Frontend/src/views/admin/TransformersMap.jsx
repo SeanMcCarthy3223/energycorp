@@ -65,7 +65,7 @@ class TransformersMap extends Component {
       is_active: true
     };
 
-    axios.post("https://energycorp.herokuapp.com/api/energytransfers/counter/create/", obj)
+    axios.post("/api/energytransfers/counter/create/", obj)
       .then(res => {
         this.closeToggle();
         this.setState({
@@ -149,7 +149,7 @@ class TransformersMap extends Component {
         substationTransformator: sub
       };
 
-      axios.post("https://energycorp.herokuapp.com/api/energytransfers/transformator/create/", obj)
+      axios.post("/api/energytransfers/transformator/create/", obj)
         .then(res => {
           this.getAllMapData();
         })
@@ -165,7 +165,7 @@ class TransformersMap extends Component {
         is_active: true
       };
 
-      axios.post("https://energycorp.herokuapp.com/api/energytransfers/substation/create/", obj)
+      axios.post("/api/energytransfers/substation/create/", obj)
         .then(res => {
           this.getAllMapData();
         })
@@ -181,7 +181,7 @@ class TransformersMap extends Component {
 
     if (type === "transformer") {
 
-      axios.delete("https://energycorp.herokuapp.com/api/energytransfers/transformator/delete/" + key)
+      axios.delete("/api/energytransfers/transformator/delete/" + key)
         .then(res => {
           this.getAllMapData();
         })
@@ -191,7 +191,7 @@ class TransformersMap extends Component {
 
     } else if (type === "substations") {
 
-      axios.delete("https://energycorp.herokuapp.com/api/energytransfers/substation/delete/" + key)
+      axios.delete("/api/energytransfers/substation/delete/" + key)
         .then(res => {
           this.getAllMapData();
         })
@@ -199,7 +199,7 @@ class TransformersMap extends Component {
           console.log(err);
         })
     } else {
-      axios.delete("https://energycorp.herokuapp.com/api/energytransfers/counter/delete/" + key)
+      axios.delete("/api/energytransfers/counter/delete/" + key)
         .then(res => {
           this.getAllMapData();
         })
@@ -211,7 +211,7 @@ class TransformersMap extends Component {
 
   inactiveActivePoint = (key, val, type) => {
     if (type === "transformer") {
-      axios.patch("https://energycorp.herokuapp.com/api/energytransfers/transformator/inactivate/" + key + "/", { "is_active": !val })
+      axios.patch("/api/energytransfers/transformator/inactivate/" + key + "/", { "is_active": !val })
         .then(res => {
           this.getAllMapData();
         })
@@ -220,7 +220,7 @@ class TransformersMap extends Component {
         })
 
     } else if (type === "substations") {
-      axios.patch("https://energycorp.herokuapp.com/api/energytransfers/substation/inactivate/" + key + "/", { "is_active": !val })
+      axios.patch("/api/energytransfers/substation/inactivate/" + key + "/", { "is_active": !val })
         .then(res => {
           this.getAllMapData();
         })
@@ -228,7 +228,7 @@ class TransformersMap extends Component {
           console.log(err);
         })
     } else {
-      axios.patch("https://energycorp.herokuapp.com/api/energytransfers/counter/inactivate/" + key + "/", { "is_active": !val })
+      axios.patch("/api/energytransfers/counter/inactivate/" + key + "/", { "is_active": !val })
         .then(res => {
           this.getAllMapData();
         })
@@ -250,9 +250,9 @@ class TransformersMap extends Component {
 
   async getAllMapData() {
 
-    const res = await fetch('https://energycorp.herokuapp.com/api/energytransfers/transformator');
-    const res2 = await fetch('https://energycorp.herokuapp.com/api/energytransfers/substation/');
-    const res3 = await fetch('https://energycorp.herokuapp.com/api/energytransfers/counter/ ')
+    const res = await fetch('/api/energytransfers/transformator');
+    const res2 = await fetch('/api/energytransfers/substation/');
+    const res3 = await fetch('/api/energytransfers/counter/ ')
 
     const data = await res.json();
     const data2 = await res2.json();

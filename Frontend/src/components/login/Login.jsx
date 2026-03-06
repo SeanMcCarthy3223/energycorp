@@ -66,7 +66,7 @@ class Login extends React.Component {
              }, delay);
          });*/
 
-        axios.post("https://energycorp.herokuapp.com/api/user/login/", data)
+        axios.post("/api/user/login/", data)
             .then(res => {
                 given = res.data;
                 if (given.code === 200) {

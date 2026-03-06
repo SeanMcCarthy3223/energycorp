@@ -30,7 +30,7 @@ class CreateReports extends React.Component {
   async componentDidMount() {
 
     // PieChartData
-    const res = await fetch('https://energycorp.herokuapp.com/api/reports/moraandsuspended/');
+    const res = await fetch('/api/reports/moraandsuspended/');
 
     const data = await res.json();
 
@@ -48,7 +48,7 @@ class CreateReports extends React.Component {
     this.setState({pieChartData: newPieChartData});
 
     // BarChartDataHighest
-    const resBar = await fetch('https://energycorp.herokuapp.com/api/reports/topfive/');
+    const resBar = await fetch('/api/reports/topfive/');
 
     const dataBar = await resBar.json();
 

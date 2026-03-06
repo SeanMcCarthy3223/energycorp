@@ -49,8 +49,8 @@ class GetBill extends React.Component {
         if (this.state.contract !== "") {
             // console.log("dfd")
             // this.setState({ contract: "" })
-            // window.open("https://energycorp.herokuapp.com/api/invoice/pdf/" + this.state.contract + "/");
-            axios.post("https://energycorp.herokuapp.com/api/invoice/by-contract/", { contractNumber: parseInt(this.state.contract) })
+            // window.open("/api/invoice/pdf/" + this.state.contract + "/");
+            axios.post("/api/invoice/by-contract/", { contractNumber: parseInt(this.state.contract) })
                 .then(res => {
                     var { error, find } = res.data;
                     if (error === true || find === false) {
@@ -71,12 +71,12 @@ class GetBill extends React.Component {
     }
 
     showPDF = (contract, bill) => {
-        window.open("https://energycorp.herokuapp.com/api/invoice/pdf/" + contract + "/" + bill + "/");
+        window.open("/api/invoice/pdf/" + contract + "/" + bill + "/");
     }
 
     sendMail = (contract, bill) => {
         this.setState({ sended: true, sendedMsg: counterpart.translate('getBill.enviando') });
-        axios.get("https://energycorp.herokuapp.com/api/invoice/sendemail/" + contract + "/" + bill + "/")
+        axios.get("/api/invoice/sendemail/" + contract + "/" + bill + "/")
             .then(res => {
                 var { error, find } = res.data;
                 if (error === true || find === false) {

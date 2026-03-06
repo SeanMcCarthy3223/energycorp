@@ -39,7 +39,7 @@ class ViewPayments extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         if (this.state.contract !== "") {
-            axios.get("https://energycorp.herokuapp.com/api/pay/payment/bycontract/" + this.state.contract)
+            axios.get("/api/pay/payment/bycontract/" + this.state.contract)
                 .then(res => {
                     var { error, find } = res.data;
                     if (error === true || find === false) {

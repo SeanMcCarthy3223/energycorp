@@ -55,7 +55,7 @@ class GetClients extends React.Component {
 
     editUser = state => {
         // alert('Axios');
-        // axios.post("https://energycorp.herokuapp.com/api/user/client/" + state.id + "/update/", state)
+        // axios.post("/api/user/client/" + state.id + "/update/", state)
         //     .then(res => {
         //         alert("AXION REALIZADA CON EXITO");
         //     })
@@ -66,7 +66,7 @@ class GetClients extends React.Component {
     }
 
     async componentDidMount() {
-        const res = await fetch('https://energycorp.herokuapp.com/api/user/client/');
+        const res = await fetch('/api/user/client/');
 
         const data = await res.json();
         // console.log(data)

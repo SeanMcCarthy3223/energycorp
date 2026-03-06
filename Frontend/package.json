@@ -2,6 +2,7 @@
   "name": "energyCorp",
   "version": "1.1.0",
   "private": true,
+  "proxy": "http://localhost:8000",
   "homepage": "https://energy-corp.web.app/",
   "dependencies": {
     "axios": "^0.19.2",
