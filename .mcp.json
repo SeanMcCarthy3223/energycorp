@@ -1,3 +1,12 @@
 {
-  "mcpServers": {}
+  "mcpServers": {
+    "github": {
+      "command": "/home/smc/.nvm/versions/node/v18.16.0/bin/npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}",
+        "PATH": "/home/smc/.nvm/versions/node/v18.16.0/bin:/usr/local/bin:/usr/bin:/bin"
+      }
+    }
+  }
 }
