@@ -79,11 +79,10 @@ class Client(models.Model):
     )
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    type_client = models.PositiveSmallIntegerField(choices=USER_TYPE_CHOICES)    
-    
-    #def __str__(self):
-        #return 'The Client: {}'.format(
-            #self.user)
+    type_client = models.PositiveSmallIntegerField(choices=USER_TYPE_CHOICES)
+
+    def __str__(self):
+        return self.user.name
 
 # ==========  Modelo del trabajador que extiende de usuario basico ==========
 

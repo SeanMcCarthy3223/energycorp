@@ -11,5 +11,20 @@
       "Bash(*--force*)",
       "Bash(git push*)"
     ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [{
+          "type": "command",
+          "command": "cd $CLAUDE_PROJECT_DIR/Backend/src && python3 manage.py test 2>&1"
+        },
+        {
+          "type": "command",
+          "command": "cd $CLAUDE_PROJECT_DIR/Frontend && PATH=\"$HOME/.nvm/versions/node/v12.22.12/bin:$PATH\" npm test -- --watchAll=false 2>&1"
+        }]
+      }
+    ]
   }
 }
