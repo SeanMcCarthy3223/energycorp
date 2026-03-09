@@ -10,13 +10,14 @@ describe('Route definitions', () => {
         expect(adminRoutes[0]).toHaveProperty('layout', '/admin');
     });
 
-    test('operator routes has 4 entries', () => {
-        expect(operatorRoutes).toHaveLength(4);
+    test('operator routes has 5 entries', () => {
+        expect(operatorRoutes).toHaveLength(5);
         expect(operatorRoutes[0]).toHaveProperty('layout', '/operator');
     });
 
-    test('manager routes has 1 entry', () => {
-        expect(managerRoutes).toHaveLength(1);
+    test('manager routes has 2 entries', () => {
+        expect(managerRoutes).toHaveLength(2);
         expect(managerRoutes[0]).toHaveProperty('layout', '/manager');
+        expect(managerRoutes[1]).toHaveProperty('layout', '/manager');
     });
 });

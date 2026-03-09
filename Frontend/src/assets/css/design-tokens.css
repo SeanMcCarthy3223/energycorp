@@ -1,0 +1,91 @@
+/*
+ * EnergyCorp Design Tokens
+ *
+ * CSS custom properties mapped from Figma variables and
+ * _variables.scss (Paper Dashboard template).
+ *
+ * Source: Figma "Sean McCarthy's team library"
+ *         node 3314:1047  —  Component Reference
+ */
+
+:root {
+  /* -------------------------------------------------- */
+  /*  Colors — Semantic                                  */
+  /* -------------------------------------------------- */
+  --color-primary:            #51cbce;
+  --color-success:            #6bd098;
+  --color-info:               #51bcda;
+  --color-warning:            #fbc658;
+  --color-danger:             #ef8157;
+  --color-purple:             #c178c1;
+  --color-orange:             #f96332;
+
+  /* -------------------------------------------------- */
+  /*  Colors — Neutrals                                  */
+  /* -------------------------------------------------- */
+  --color-white:              #ffffff;
+  --color-surface:            #ffffff;       /* card / panel backgrounds       */
+  --color-body-bg:            #f4f3ef;       /* page background                */
+  --color-gray-light:         #e3e3e3;       /* borders, dividers              */
+  --color-gray-medium:        #dddddd;       /* secondary borders              */
+  --color-gray-dark:          #9a9a9a;       /* disabled / placeholder text    */
+  --color-font:               #66615b;       /* default body text              */
+  --color-muted:              #a49e93;       /* secondary / caption text       */
+  --color-black:              #2c2c2c;       /* headings                       */
+
+  /* -------------------------------------------------- */
+  /*  Typography                                         */
+  /* -------------------------------------------------- */
+  --font-family:              'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Heading sizes */
+  --font-size-h1:             49px;    /* 3.5em  — Bold 700       */
+  --font-size-h2:             35px;    /* 2.5em  — Bold 700       */
+  --font-size-h3:             28px;    /* 2em    — SemiBold 600   */
+  --font-size-h4:             24px;    /* 1.714em — SemiBold 600  */
+  --font-size-h5:             22px;    /* 1.57em  — SemiBold 600  */
+  --font-size-h6:             14px;    /* 1em     — SemiBold 600, uppercase */
+
+  /* Body sizes */
+  --font-size-base:           14px;    /* Regular 400, body text  */
+  --font-size-medium:         16px;    /* EC_Body / EC_Body_Bold  */
+  --font-size-sm:             12px;    /* EC_Label_sm — captions  */
+  --font-size-xs:             10px;    /* mini labels, metadata   */
+  --font-size-number:         28px;    /* stat / metric values — Bold 700 */
+
+  /* Weights */
+  --font-weight-normal:       400;
+  --font-weight-semi:         600;
+  --font-weight-bold:         700;
+
+  /* Line height */
+  --line-height-general:      1.5;
+  --line-height-tight:        1.35;
+
+  /* -------------------------------------------------- */
+  /*  Spacing                                            */
+  /* -------------------------------------------------- */
+  --spacing-sm:               10px;    /* small gaps, card footer         */
+  --spacing-base:             15px;    /* card padding, grid gutter       */
+  --spacing-lg:               30px;    /* section spacing                 */
+
+  /* -------------------------------------------------- */
+  /*  Border Radius                                      */
+  /* -------------------------------------------------- */
+  --radius-card:              12px;    /* card corners                    */
+  --radius-button:            20px;    /* standard pill button            */
+  --radius-input:             4px;     /* form inputs                     */
+
+  /* -------------------------------------------------- */
+  /*  Sizing                                             */
+  /* -------------------------------------------------- */
+  --size-icon-sm:             32px;    /* small icons                     */
+  --size-icon-md:             40px;    /* medium icons                    */
+  --size-stat-icon:           56px;    /* status-card icon circle         */
+  --size-input-height:        40px;    /* input / button height           */
+
+  /* -------------------------------------------------- */
+  /*  Shadows                                            */
+  /* -------------------------------------------------- */
+  --shadow-card:              0px 6px 10px -4px rgba(0, 0, 0, 0.15);
+}

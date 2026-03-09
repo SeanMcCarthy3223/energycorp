@@ -3,13 +3,15 @@ from django.urls import path
 from .views import (
     MoraAndSuspended,
     TopFiveCounters,
-     QuantityCounterTransformator
+    QuantityCounterTransformator,
+    OverdueClients,
 )
 
 urlpatterns = [
     path('moraandsuspended/',MoraAndSuspended.as_view()),
     path('topfive/',TopFiveCounters.as_view()),
-    path('quantitycounterfortransformator/', QuantityCounterTransformator.as_view())
+    path('quantitycounterfortransformator/', QuantityCounterTransformator.as_view()),
+    path('overdue-clients/', OverdueClients.as_view()),
 ]
 
 """

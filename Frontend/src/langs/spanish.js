@@ -77,5 +77,22 @@ export default {
     },
     bot: {
         input: "Escribe algo"
+    },
+    overdueClients: {
+        title: 'Clientes Morosos',
+        clientName: 'Nombre del Cliente',
+        contractNumber: 'Contrato #',
+        invoiceDate: 'Fecha de Factura',
+        amountOwed: 'Monto Adeudado',
+        daysOverdue: 'Dias de Mora'
+    },
+    dashboard: {
+        title: 'Panel',
+        totalClients: 'Total Clientes',
+        activeContracts: 'Contratos Activos',
+        pendingInvoices: 'Facturas Pendientes',
+        suspendedServices: 'Servicios Suspendidos',
+        updated: 'Actualizado',
+        lastMonth: 'Último mes'
     }
 }

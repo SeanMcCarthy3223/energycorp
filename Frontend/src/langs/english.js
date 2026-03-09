@@ -77,5 +77,22 @@ export default {
     },
     bot: {
         input: "Type Something"
+    },
+    overdueClients: {
+        title: 'Overdue Clients',
+        clientName: 'Client Name',
+        contractNumber: 'Contract #',
+        invoiceDate: 'Invoice Date',
+        amountOwed: 'Amount Owed',
+        daysOverdue: 'Days Overdue'
+    },
+    dashboard: {
+        title: 'Dashboard',
+        totalClients: 'Total Clients',
+        activeContracts: 'Active Contracts',
+        pendingInvoices: 'Pending Invoices',
+        suspendedServices: 'Suspended Services',
+        updated: 'Updated',
+        lastMonth: 'Last month'
     }
 }
