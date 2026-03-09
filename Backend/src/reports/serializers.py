@@ -8,6 +8,14 @@ from energytransfers.models import Counter
 from contract.models import Contract
 from energytransfers.serializers import CounterSerializer
 
+
+class OverdueClientSerializer(serializers.Serializer):
+    client_name = serializers.CharField()
+    contract_number = serializers.IntegerField()
+    invoice_date = serializers.DateField()
+    amount_owed = serializers.FloatField()
+    days_overdue = serializers.IntegerField()
+
 class getNameUserSerializer(serializers.ModelSerializer):
 
     class Meta:

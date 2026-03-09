@@ -74,6 +74,8 @@
       "src/components/Sidebar/**/*.jsx",
       "src/views/admin/CreateUserForm.jsx",
       "src/views/operator/CreateClient.jsx",
+      "src/views/operator/Dashboard.jsx",
+      "src/components/StatusCard/StatusCard.jsx",
       "src/views/operator/Payment.jsx",
       "src/views/manager/CreateReports.jsx",
       "src/routes/adminRoutes.js",

@@ -1,12 +1,14 @@
 from django.shortcuts import render
-from rest_framework.views import View
+from rest_framework.views import View, APIView
 
 from users.models import Client
 from energytransfers.models import Counter
-from contract.models import Contract
+from contract.models import Contract, Invoice
 from rest_framework.response import Response
+from rest_framework.authentication import TokenAuthentication
 
 import json
+import datetime
 from django.db.models import F
 
 from django.http import HttpResponse
@@ -14,8 +16,10 @@ from django.http import HttpResponse
 from .serializers import (
     MoraSerializer,
     ServiceSuspendedSerializer,
-   
+    OverdueClientSerializer,
 )
+
+from .permissions import AllowManager
 
 from django.db.models import Count
 # Create your views here.
@@ -112,7 +116,37 @@ class QuantityCounterTransformator(View):
 
 
 
-        return HttpResponse(json.dumps(list(queryset))) 
+        return HttpResponse(json.dumps(list(queryset)))
+
+
+class OverdueClients(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [AllowManager]
+
+    def get(self, request):
+        threshold_date = datetime.date.today() - datetime.timedelta(days=30)
+        invoices = Invoice.objects.filter(
+            stateInvoice=False,
+            billingDate__lte=threshold_date
+        ).select_related('contract__client__user')
+
+        results = []
+        for invoice in invoices:
+            contract = invoice.contract
+            client = contract.client
+            days_overdue = (datetime.date.today() - invoice.billingDate).days
+            results.append({
+                'client_name': client.user.name,
+                'contract_number': contract.contractNumber,
+                'invoice_date': invoice.billingDate,
+                'amount_owed': invoice.total,
+                'days_overdue': days_overdue,
+            })
+
+        serializer = OverdueClientSerializer(results, many=True)
+        return Response(serializer.data)
+
+
 """
 COMENT
 COMENT

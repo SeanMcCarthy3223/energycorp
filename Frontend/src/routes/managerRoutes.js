@@ -1,4 +1,5 @@
 import CreateReports from "views/manager/CreateReports.jsx";
+import OverdueClients from "views/manager/OverdueClients.jsx";
 
 var managerRoutes = [
   {
@@ -6,6 +7,13 @@ var managerRoutes = [
     name: "Create Report",
     icon: "nc-icon nc-diamond",
     component: CreateReports,
+    layout: "/manager"
+  },
+  {
+    path: "/overdueClients",
+    name: "Overdue Clients",
+    icon: "nc-icon nc-bell-55",
+    component: OverdueClients,
     layout: "/manager"
   }
 ];

@@ -29,6 +29,7 @@ import "assets/css/index.css";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 import "assets/css/animate.css";
 import "assets/css/login.css";
+import "assets/css/design-tokens.css";
 
 import App from 'App.js';
 

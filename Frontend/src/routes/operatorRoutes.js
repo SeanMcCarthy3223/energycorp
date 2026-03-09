@@ -1,9 +1,17 @@
+import Dashboard from "views/operator/Dashboard.jsx";
 import CreateClient from "views/operator/CreateClient.jsx";
 import GetClients from "views/operator/GetClients.jsx";
 import Payments from "views/operator/Payment.jsx";
 import ViewPayments from "views/operator/ViewPayments.jsx";
 
 var operatorRoutes = [
+  {
+    path: "/dashboard",
+    name: "Dashboard",
+    icon: "nc-icon nc-bank",
+    component: Dashboard,
+    layout: "/operator"
+  },
   {
     path: "/createClient",
     name: "createClient",
