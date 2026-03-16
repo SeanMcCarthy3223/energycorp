@@ -3,6 +3,7 @@ import CreateClient from "views/operator/CreateClient.jsx";
 import GetClients from "views/operator/GetClients.jsx";
 import Payments from "views/operator/Payment.jsx";
 import ViewPayments from "views/operator/ViewPayments.jsx";
+import ClientList from "components/ClientList/ClientList.jsx";
 
 var operatorRoutes = [
   {
@@ -38,6 +39,13 @@ var operatorRoutes = [
     name: "viewPayments",
     icon: "nc-icon nc-single-copy-04",
     component: ViewPayments,
+    layout: "/operator"
+  },
+  {
+    path: "/clientList",
+    name: "clientList",
+    icon: "nc-icon nc-bullet-list-67",
+    component: ClientList,
     layout: "/operator"
   }
 ];

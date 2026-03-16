@@ -1,0 +1,90 @@
+.client-list__card {
+    border-radius: var(--radius-card, 12px);
+    box-shadow: var(--shadow-card, 0px 6px 10px -4px rgba(0, 0, 0, 0.15));
+}
+
+.client-list__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-base, 15px);
+}
+
+.client-list__title-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.client-list__title {
+    font-size: var(--font-size-medium, 16px);
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-black, #2c2c2c);
+    margin-bottom: 0;
+}
+
+.client-list__subtitle {
+    font-size: var(--font-size-sm, 12px);
+    font-weight: var(--font-weight-normal, 400);
+    color: var(--color-muted, #a49e93);
+    margin-bottom: 0;
+}
+
+.client-list__search {
+    width: 220px;
+
+    input {
+        border: 1px solid var(--color-gray-light, #e3e3e3);
+        border-radius: var(--radius-input, 4px);
+        font-size: var(--font-size-base, 14px);
+        color: var(--color-font, #66615b);
+
+        &::placeholder {
+            color: var(--color-muted, #a49e93);
+        }
+    }
+}
+
+.client-list__table {
+    thead th {
+        font-size: var(--font-size-large, 18px);
+        font-weight: var(--font-weight-bold, 700);
+        color: var(--color-font, #66615b);
+        border-bottom: 1px solid var(--color-gray-light, #e3e3e3);
+        padding: 12px 7px 13px;
+    }
+
+    tbody td {
+        font-size: var(--font-size-medium, 16px);
+        font-weight: var(--font-weight-normal, 400);
+        color: var(--color-font, #66615b);
+        padding: 18px 7px;
+        border-bottom: 1px solid var(--color-gray-light, #e3e3e3);
+        vertical-align: middle;
+    }
+
+    .client-list__name {
+        font-weight: var(--font-weight-bold, 700);
+    }
+
+    .td-actions {
+        .btn {
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            padding: 0;
+            margin: 0 2px;
+            line-height: 30px;
+
+            i {
+                font-size: var(--font-size-base, 14px);
+            }
+        }
+    }
+}
+
+.client-list__badge {
+    font-size: var(--font-size-sm, 12px);
+    font-weight: var(--font-weight-semi, 600);
+    padding: 2px 12px;
+    border-radius: 3px;
+}

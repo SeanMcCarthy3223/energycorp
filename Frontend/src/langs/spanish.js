@@ -86,6 +86,19 @@ export default {
         amountOwed: 'Monto Adeudado',
         daysOverdue: 'Dias de Mora'
     },
+    clientList: {
+        title: 'Lista de Clientes',
+        subtitle: 'Gestionar clientes registrados',
+        searchPlaceholder: 'Buscar clientes...',
+        colName: 'Nombre',
+        colContract: 'Contrato #',
+        colCounter: 'Contador',
+        colStatus: 'Estado',
+        colActions: 'Acciones',
+        statusActive: 'Activo',
+        statusOverdue: 'Moroso',
+        statusSuspended: 'Suspendido'
+    },
     dashboard: {
         title: 'Panel',
         totalClients: 'Total Clientes',

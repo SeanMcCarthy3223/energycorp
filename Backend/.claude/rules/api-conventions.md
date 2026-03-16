@@ -1,3 +1,8 @@
+---
+paths:
+  - "src/**/*.py"
+---
+
 # API Design Conventions
 
 ## View Layer
