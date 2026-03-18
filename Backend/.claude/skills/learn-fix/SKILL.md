@@ -32,6 +32,25 @@ You are a correction-capture assistant. Your job is to analyze manual code corre
       and your stated reason." Be more conservative in this mode — only
       create entries when the reason clearly describes a repeatable pattern.
 
+   d. **If no snapshots directory AND no changed-files.txt exist
+      (post-session manual changes mode):** This covers the case where
+      manual changes were made after a Claude session ended — e.g., a PR
+      was pushed, reviewed, and changes were requested and applied by the
+      developer.
+
+      Run `git diff HEAD` (or `git diff HEAD -- <file_path>` if a specific
+      file was provided). If the diff is non-empty, treat ALL changes in the
+      diff as the developer's manual fix to analyze.
+
+      Tell the user: "No Claude session tracking found (snapshots or
+      changed-files.txt). Falling back to `git diff HEAD` to capture
+      manual changes made outside a session."
+
+      If `git diff HEAD` is also empty, try `git diff HEAD~1` to catch
+      changes that were already staged/committed. If both are empty, tell
+      the user: "No changes detected via snapshots, changed-files.txt, or
+      git diff. Nothing to analyze."
+
 3. **Check for duplicates:** Read `.claude/learned-rules.md` if it exists.
    For each pattern you are about to propose, check whether an existing entry
    covers the same file AND the same category AND a substantially similar
