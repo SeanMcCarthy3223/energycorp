@@ -2,14 +2,25 @@
   "permissions": {
     "allow": [
       "Bash(python3 src/manage.py test)",
+      "Bash(python3 src/manage.py test *)",
+      "Bash(*pytest*)",
       "Bash(npm test)",
-      "Bash(npm run build)"
+      "Bash(npm test *)",
+      "Bash(npm run build)",
+      "Bash(flake8*)",
+      "Bash(black --check*)",
+      "Read(*)"
     ],
     "deny": [
-      "Bash(rm -rf *)",
+      "Bash(*rm -rf*)",
       "Bash(*DROP TABLE*)",
       "Bash(*--force*)",
-      "Bash(git push*)"
+      "Bash(git push*)",
+      "Bash(*git reset --hard*)",
+      "Bash(*manage.py migrate*)",
+      "Bash(*manage.py makemigrations*)",
+      "Edit(**/.env*)",
+      "Write(**/.env*)"
     ]
   },
   "hooks": {
